@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9GETVCQ90R"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-9GETVCQ90R');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Color-NeuS</title>
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <!-- <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script> -->
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-1 publication-title">Color-NeuS: Reconstructing Neural Implicit Surfaces with Color
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://colmar-zlicheng.github.io">Licheng Zhong</a><sup>1 *</sup>,
+                <a href="https://lixiny.github.io">Lixin Yang</a><sup>1,2 *</sup>,
+                <a href="https://kailinli.top">Kailin Li</a><sup>1</sup>,
+                <a href="https://haoyuzhen.com">Haoyu Zhen</a><sup>1</sup>,
+                <a href="https://joymei.github.io">Mei Han</a><sup>3</sup>,
+                <a href="https://www.mvig.org">Cewu Lu</a><sup>1,2 &dagger;</sup>
+              </span>
+            </div>
+            <!-- <br> -->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University, <sup>2</sup>Shanghai Qi Zhi
+                Institute, <sup>3</sup>National University of
+                Singapore</span>
+            </div>
+            <!-- <div class="color-title">
+              <h1>Color NeuS</h1>
+            </div> -->
+            <div class="is-size-5 publication-authors">
+              <b>3DV 2024</b>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://colmar-zlicheng.github.io/color_neus"
+                    class="external-link button is-normal is-rounded is-info">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <!-- Arxiv Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2308.06962" class="external-link button is-normal is-rounded is-info">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Arxiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://colmar-zlicheng.github.io/color_neus"
+                    class="external-link button is-normal is-rounded is-info">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/Colmar-zlicheng/Color-NeuS"
+                    class="external-link button is-normal is-rounded is-info">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Data Link. -->
+                <span class="link-block">
+                  <a href="https://drive.google.com/drive/folders/1C6vcRiy_MFMtsaR8AydRAPrLIkok-tJm?usp=sharing"
+                    class="external-link button is-normal is-rounded is-info">
+                    <span class="icon">
+                      <i class="far fa-images"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                The reconstruction of object surfaces from multi-view images or monocular video is a fundamental issue
+                in computer vision. However, much of the recent research concentrates on reconstructing geometry through
+                implicit or explicit methods. In this paper, we shift our focus towards reconstructing mesh in
+                conjunction with color. We remove the view-dependent color from neural volume rendering while retaining
+                volume rendering performance through a relighting network. Mesh is extracted from the signed distance
+                function (SDF) network for the surface, and color for each surface vertex is drawn from the global color
+                network. To evaluate our approach, we conceived a in hand object scanning task featuring numerous
+                occlusions and dramatic shifts in lighting conditions. We've gathered several videos for this task, and
+                the results surpass those of any existing methods capable of reconstructing mesh alongside color.
+                Additionally, our method's performance was assessed using public datasets, including DTU, BlendedMVS,
+                and OmniObject3D. The results indicated that our method performs well across all these datasets.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Abstract. -->
+        <br>
+
+        <!-- Method. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Method</h2>
+            <div class="content has-text-justified">
+              <p>
+                <img src="static/image/pipeline_web.png" alt="image">
+              <p>
+              <p>
+                Color-NeuS employs a Signed Distance Function (SDF) network to grasp the implicit geometry. Following
+                that, it utilizes a global color network to learn view-independent color characteristics. Additionally,
+                a relight network is deployed to adjust for variations that correlate with the viewing direction. During
+                the inference stage, only the global view-independent color is used, ensuring a consistent visual
+                representation regardless of perspective.
+              <p>
+            </div>
+          </div>
+        </div>
+        <!--/ Method. -->
+
+        <div class='title is-3'>Interactive Results</div>
+        <div class='title is-4 has-text-centered'>Dataset</div>
+        <div class="columns has-text-centered bt-dataset">
+          <div class="column has-text-centered dataset-btns">
+            <span id="iho" class="button is-info is-rounded" onclick="handleClick(this)">
+              IHO Video
+            </span>
+            <span id="omni" class="button is-normal is-rounded" onclick="handleClick(this)">
+              OmniObject3D
+            </span>
+            <span id="dtu" class="button is-normal is-rounded" onclick="handleClick(this)">
+              DTU
+            </span>
+            <span id="blendedmvs" class="button is-normal is-rounded" onclick="handleClick(this)">
+              BlendedMVS
+            </span>
+          </div>
+        </div>
+
+        <div class="columns has-text-centered bt-iho_object">
+          <div class="column has-text-centered object-btns sub-button" id="sub-button-iho">
+            <span id="ghost_bear" class="button is-info is-rounded" onclick="modelChange_video(this)">
+              ghost bear
+            </span>
+            <span id="pink_peach" class="button is-normal is-rounded " onclick="modelChange_video(this)">
+              pink peach
+            </span>
+            <span id="game_box" class="button is-normal is-rounded " onclick="modelChange_video(this)">
+              game box
+            </span>
+            <span id="drink" class="button is-normal is-rounded " onclick="modelChange_video(this)">
+              drink
+            </span>
+          </div>
+          <div class="column has-text-centered object-btns sub-button" id="sub-button-omni">
+            <span id="doll_002" class="button is-info is-rounded" onclick="modelChange_image(this)">
+              doll 002
+            </span>
+            <span id="doll_008" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              doll 008
+            </span>
+            <span id="doll_037" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              doll 037
+            </span>
+            <span id="doll_049" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              doll 049
+            </span>
+            <span id="doll_062" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              doll 062
+            </span>
+            <span id="doll_074" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              doll 074
+            </span>
+            <span id="doll_085" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              doll 085
+            </span>
+            <span id="toy_animals_001" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              toy_animals 001
+            </span>
+            <span id="toy_animals_005" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              toy_animals 005
+            </span>
+            <span id="toy_animals_016" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              toy_animals 016
+            </span>
+            <span id="toy_animals_019" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              toy_animals 019
+            </span>
+            <span id="toy_animals_059" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              toy_animals 059
+            </span>
+          </div>
+          <div class="column has-text-centered object-btns sub-button" id="sub-button-dtu">
+            <span id="dtu_24" class="button is-info is-rounded" onclick="modelChange_image(this)">
+              dtu 24
+            </span>
+            <span id="dtu_37" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 37
+            </span>
+            <span id="dtu_40" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 40
+            </span>
+            <span id="dtu_55" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 55
+            </span>
+            <span id="dtu_63" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 63
+            </span>
+            <span id="dtu_65" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 65
+            </span>
+            <span id="dtu_69" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 69
+            </span>
+            <span id="dtu_83" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 83
+            </span>
+            <span id="dtu_97" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 97
+            </span>
+            <span id="dtu_105" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 105
+            </span>
+            <span id="dtu_106" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 106
+            </span>
+            <span id="dtu_110" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 110
+            </span>
+            <span id="dtu_114" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 114
+            </span>
+            <span id="dtu_118" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 118
+            </span>
+            <span id="dtu_122" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dtu 122
+            </span>
+          </div>
+          <div class="column has-text-centered object-btns sub-button" id="sub-button-blendedmvs">
+            <span id="bmvs_bear" class="button is-info is-rounded" onclick="modelChange_image(this)">
+              bear
+            </span>
+            <span id="bmvs_clock" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              clock
+            </span>
+            <span id="bmvs_dog" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              dog
+            </span>
+            <span id="bmvs_durian" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              durian
+            </span>
+            <span id="bmvs_jade" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              jade
+            </span>
+            <span id="bmvs_man" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              man
+            </span>
+            <span id="bmvs_sculpture" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              sculpture
+            </span>
+            <span id="bmvs_stone" class="button is-normal is-rounded " onclick="modelChange_image(this)">
+              stone
+            </span>
+          </div>
+        </div>
+
+        <div class="container is-max-desktop">
+          <div class='columns is-vcentered'>
+            <div class="column is-centered has-text-centered" id="show_video" style="display: block;">
+              <span style="text-align:center;">
+                <video style="text-align:center; max-height: 400px;" id="video" autoplay muted loop playsinline controls
+                  height="100%">
+                  <source src="static/videos/ghost_bear.mp4" type="video/mp4">
+                </video>
+              </span>
+            </div>
+            <div class="column is-centered has-text-centered" id="show_image" style="display: none;">
+              <span style=" text-align:center;">
+                <img src="static/image/omniobject3d/doll_002.png" alt="image" id="image" width="100%"
+                  style="text-align:center;">
+              </span>
+            </div>
+            <div class="column is-centered has-text-centered">
+              <span class="has-text-centered">
+                <model-viewer style="max-height: 400px;" id='model' alt="model"
+                  src="2023112385222847315.glb" shadow-intensity="0" ar auto-rotate
+                  rotation-per-second="40deg" camera-controls touch-action="pan-y">
+                </model-viewer>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div>Note: It may be slow to load models.</div>
+
+        <br>
+        <br>
+
+        <div class='title is-3'>Comparison</div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <div class="content has-text-justified">
+              <p>
+                <img src="static/image/exp_iho.png" alt="image">
+              <p>
+            </div>
+          </div>
+        </div>
+        <div class='title is-4'>Interactive</div>
+        <div class="columns has-text-centered bt-iho_object">
+          <div class="column has-text-centered object-btns">
+            <span id="ghost_bear" class="button is-info is-rounded" onclick="handleClick_iho(this)">
+              ghost bear
+            </span>
+            <span id="pink_peach" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
+              pink peach
+            </span>
+            <span id="game_box" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
+              game box
+            </span>
+            <span id="drink" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
+              drink
+            </span>
+          </div>
+        </div>
+
+        <div class='columns is-vcentered'>
+          <div class="column is-centered has-text-centered">
+            <div class='title is-5'>Structure light</div>
+            <span class="has-text-centered">
+              <model-viewer style="max-height: 400px;" id='laser' alt="model" class="model_square"
+                src="static/models/iho/ghostbear_laser.glb" shadow-intensity="0" ar auto-rotate
+                rotation-per-second="40deg" camera-controls touch-action="pan-y">
+              </model-viewer>
+            </span>
+          </div>
+          <div class="column is-centered has-text-centered">
+            <div class='title is-5'>Colmap</div>
+            <span class="has-text-centered">
+              <model-viewer style="max-height: 400px;" id='colmap' alt="model" class="model_square"
+                src="static/models/iho/colmap_poisson_ghostbear_rot.glb" shadow-intensity="0" ar auto-rotate
+                rotation-per-second="40deg" camera-controls touch-action="pan-y">
+              </model-viewer>
+            </span>
+          </div>
+          <div class="column is-centered has-text-centered">
+            <div class='title is-5'>INT solution</div>
+            <span class="has-text-centered">
+              <model-viewer style="max-height: 400px;" id='model_int' alt="model" class="model_square"
+                src="static/models/iho/NeuS_iho_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
+                rotation-per-second="40deg" camera-controls touch-action="pan-y">
+              </model-viewer>
+            </span>
+          </div>
+        </div>
+        <div class='columns is-vcentered'>
+          <div class="column is-centered has-text-centered">
+            <div class='title is-5'>Naive solution</div>
+            <span class="has-text-centered">
+              <model-viewer style="max-height: 400px;" id='model_naive' alt="model" class="model_square"
+                src="static/models/iho/NeuS_Naive_iho_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
+                rotation-per-second="40deg" camera-controls touch-action="pan-y">
+              </model-viewer>
+            </span>
+          </div>
+          <div class="column is-centered has-text-centered">
+            <div class='title is-5'>Our solution</div>
+            <span class="has-text-centered">
+              <model-viewer style="max-height: 400px;" id='model_ours' alt="model" class="model_square"
+                src="static/models/iho/NeuS_Color_iho_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
+                rotation-per-second="40deg" camera-controls touch-action="pan-y">
+              </model-viewer>
+            </span>
+          </div>
+        </div>
+        <div>Note: It may be slow to load models.</div>
+
+        <br>
+        <br>
+
+        <div class='title is-3'>Ablation Study</div>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <!-- <div class="content has-text-justified"> -->
+            <!-- <p> -->
+            <img src="static/image/ablation.png" alt="image" width="70%" style="text-align:center;">
+            <!-- <p> -->
+            <!-- </div> -->
+          </div>
+        </div>
+        <div class='title is-4'>Interactive</div>
+        <div class='columns is-vcentered'>
+          <div class=" column is-centered has-text-centered">
+            <div class='title is-5'>w/o inv sigmoid</div>
+            <span class="has-text-centered">
+              <model-viewer style="max-height: 400px;" id='laser' alt="model_woinv" class="model_square"
+                src="static/models/iho/NeuS_Color_iho_woinv_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
+                rotation-per-second="40deg" camera-controls touch-action="pan-y">
+              </model-viewer>
+            </span>
+          </div>
+          <div class="column is-centered has-text-centered">
+            <div class='title is-5'>w/o grad</div>
+            <span class="has-text-centered">
+              <model-viewer style="max-height: 400px;" id='model_wograd' alt="model" class="model_square"
+                src="static/models/iho/NeuS_Color_iho_wograd_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
+                rotation-per-second="40deg" camera-controls touch-action="pan-y">
+              </model-viewer>
+            </span>
+          </div>
+          <div class="column is-centered has-text-centered">
+            <div class='title is-5'>Whole Model</div>
+            <span class="has-text-centered">
+              <model-viewer style="max-height: 400px;" id='model_ours' alt="model" class="model_square"
+                src="static/models/iho/NeuS_Color_iho_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
+                rotation-per-second="40deg" camera-controls touch-action="pan-y">
+              </model-viewer>
+            </span>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{zhong2024colorneus,
+        title     = {Color-NeuS: Reconstructing Neural Implicit Surfaces with Color},
+        author    = {Zhong, Licheng and Yang, Lixin and Li, Kailin and Zhen, Haoyu and Han, Mei and Lu, Cewu},
+        booktitle = {International Conference on 3D Vision (3DV)},
+        year      = {2024}
+    }</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Website taken from
+              <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a> and <a
+                href="https://github.com/bundlesdf/bundlesdf.github.io">bundlesdf</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
