@@ -24,7 +24,7 @@ var data_test = {
 var iho_object = {
   "drink": {
     "video": "static/videos/drink.mp4",
-    "model": "static/models/iho/NeuS_Color_iho_drink_1024.glb",
+    "model": "2023112385222847315.glb",
     "model_naive": "static/models/iho/NeuS_Naive_iho_drink_1024.glb",
     "model_int": "static/models/iho/NeuS_iho_drink_1024.glb",
     "laser": "static/models/iho/drink_laser.glb",
