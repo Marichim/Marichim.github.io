@@ -28,7 +28,7 @@ var iho_object = {
     "model_naive": "2023112385222847315.glb",
     "model_int": "2023112385222847315.glb",
     "laser": "2023112385222847315.glb",
-    "colmap": "2023112385222847315.glb"
+    "colmap": "ImageToStl.com_banana.glb"
   },
   "game_box": {
     "video": "static/videos/game_box.mp4",
