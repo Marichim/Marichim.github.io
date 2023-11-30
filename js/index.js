@@ -32,7 +32,7 @@ var iho_object = {
   },
   "game_box": {
     "video": "static/videos/game_box.mp4",
-    "model": "static/models/iho/NeuS_Color_iho_gamebox_2048.glb",
+    "model": "ImageToStl.com_00300000__penbag.glb",
     "model_naive": "static/models/iho/NeuS_Naive_iho_gamebox_2048.glb",
     "model_int": "static/models/iho/NeuS_iho_gamebox_2048.glb",
     "laser": "static/models/iho/game_box_laser.glb",
