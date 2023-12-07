@@ -179,7 +179,7 @@
         <br>
         <br>
 
-        <div class='title is-3'>Comparison</div>
+        <div class='title is-3'>Results</div>
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <div class="content has-text-justified">
@@ -191,53 +191,24 @@
         </div>
 
         <!-- interaction -->
-        <div class='title is-4'>Interactive</div>
         <div class="columns has-text-centered bt-iho_object">
           <div class="column has-text-centered object-btns">
             <span id="ghost_bear" class="button is-info is-rounded" onclick="handleClick_iho(this)">
-              ghost bear
+              Lychee
             </span>
             <span id="pink_peach" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
-              pink peach
+              Banana
             </span>
             <span id="game_box" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
-              game box
+              Penbag
             </span>
             <span id="drink" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
-              drink
+              Tool
             </span>
           </div>
         </div>
 
-        <!--<div class='columns is-vcentered'>
-          <div class="column is-centered has-text-centered">
-            <div class='title is-5'>Structure light</div>
-            <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='laser' alt="model" class="model_square"
-                src="2023112385222847315.glb" shadow-intensity="0" ar auto-rotate
-                rotation-per-second="40deg" camera-controls touch-action="pan-y">
-              </model-viewer>
-            </span>
-          </div>
-          <div class="column is-centered has-text-centered">
-            <div class='title is-5'>Colmap</div>
-            <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='colmap' alt="model" class="model_square"
-                src="ImageToStl.com_banana.glb" shadow-intensity="0" ar auto-rotate
-                rotation-per-second="40deg" camera-controls touch-action="pan-y">
-              </model-viewer>
-            </span>
-          </div>
-          <div class="column is-centered has-text-centered">
-            <div class='title is-5'>INT solution</div>
-            <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='model_int' alt="model" class="model_square"
-                src="static/models/iho/NeuS_iho_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
-                rotation-per-second="40deg" camera-controls touch-action="pan-y">
-              </model-viewer>
-            </span>
-          </div>
-        </div> -->
+      
         <div class='columns is-vcentered'>
           <div class="column is-centered has-text-centered">
             <div class='title is-5'>Naive solution</div>
@@ -263,41 +234,35 @@
         <br>
         <br>
 
-        <div class='title is-3'>Ablation Study</div>
+        <div class='title is-3'>Comparison</div>
         <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <!-- <div class="content has-text-justified"> -->
-            <!-- <p> -->
-            <img src="static/image/ablation.png" alt="image" width="70%" style="text-align:center;">
-            <!-- <p> -->
-            <!-- </div> -->
+        </div>
+      <div class="columns has-text-centered bt-iho_object">
+          <div class="column has-text-centered object-btns">
+            <span id="ghost_bear" class="button is-info is-rounded" onclick="handleClick_iho(this)">
+              Lychee
+            </span>
+            <span id="pink_peach" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
+              Banana
+            </span>
           </div>
         </div>
-        <div class='title is-4'>Interactive</div>
+      
         <div class='columns is-vcentered'>
-          <div class=" column is-centered has-text-centered">
-            <div class='title is-5'>w/o inv sigmoid</div>
+          <div class="column is-centered has-text-centered">
+            <div class='title is-5'>With Mask</div>
             <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='laser' alt="model_woinv" class="model_square"
-                src="static/models/iho/NeuS_Color_iho_woinv_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
+              <model-viewer style="max-height: 400px;" id='model_naive' alt="model" class="model_square"
+                src="ImageToStl.com_banana.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
           </div>
           <div class="column is-centered has-text-centered">
-            <div class='title is-5'>w/o grad</div>
-            <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='model_wograd' alt="model" class="model_square"
-                src="static/models/iho/NeuS_Color_iho_wograd_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
-                rotation-per-second="40deg" camera-controls touch-action="pan-y">
-              </model-viewer>
-            </span>
-          </div>
-          <div class="column is-centered has-text-centered">
-            <div class='title is-5'>Whole Model</div>
+            <div class='title is-5'>Without Mask</div>
             <span class="has-text-centered">
               <model-viewer style="max-height: 400px;" id='model_ours' alt="model" class="model_square"
-                src="static/models/iho/NeuS_Color_iho_ghostbear_2048.glb" shadow-intensity="0" ar auto-rotate
+                src="2023112385222847315.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
@@ -306,28 +271,13 @@
       </div>
   </section>
 
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{zhong2024colorneus,
-        title     = {Color-NeuS: Reconstructing Neural Implicit Surfaces with Color},
-        author    = {Zhong, Licheng and Yang, Lixin and Li, Kailin and Zhen, Haoyu and Han, Mei and Lu, Cewu},
-        booktitle = {International Conference on 3D Vision (3DV)},
-        year      = {2024}
-    }</code></pre>
-    </div>
-  </section>
 
   <footer class="footer">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-8">
           <div class="content">
-            <p>
-              Website taken from
-              <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a> and <a
-                href="https://github.com/bundlesdf/bundlesdf.github.io">bundlesdf</a>.
-            </p>
+
           </div>
         </div>
       </div>
