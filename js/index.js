@@ -5,7 +5,7 @@ $(document).ready(function () {
 
 var iho_object = {
   "lychee": {
-    "image": "00300000_0_10_lychee.png",
+    "image": "00300000_0_1_lychee.gif",
     "video": "00300000_0_1_lychee.mp4",
     "model_neus": "lychee_neus.glb",
     "model_neus2": "lychee_neus.glb",
@@ -14,7 +14,7 @@ var iho_object = {
     "model_womask": "lychee_womask.glb"
   },
   "banana": {
-    "image": "00300000_0_32_banana_wmask.png",
+    "image": "00300000_0_1_banana.gif",
     "video": "00300000_0_1_banana.mp4",
     "model_neus": "banana_wmask.glb",
     "model_neus2": "banana_wmask.glb",
@@ -23,7 +23,7 @@ var iho_object = {
     "model_womask": "banana_neus_womask.glb"
   },
   "penbag": {
-    "image": "00300000_0_3_penbag.png",
+    "image": "00300000_0_1_penbag.gif",
     "video": "00300000_0_1_penbag.mp4",
     "model_neus": "penbag_neus.glb",
     "model_neus2": "penbag_neus.glb",
@@ -32,7 +32,7 @@ var iho_object = {
     "model_womask": "banana_neus_womask.glb"
   },
   "tool": {
-    "image": "00300000_0_8_tool.png",
+    "image": "00300000_0_1_tool.gif",
     "video": "00300000_0_1_tool.mp4",
     "model_neus": "tool_neus.glb",
     "model_neus2": "tool_neus.glb",
