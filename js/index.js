@@ -22,37 +22,25 @@ var data_test = {
 }
 
 var iho_object = {
-  "drink": {
-    "video": "static/videos/drink.mp4",
-    "model": "ImageToStl.com_banana.glb",
-    "model_naive": "2023112385222847315.glb",
-    "model_int": "2023112385222847315.glb",
-    "laser": "2023112385222847315.glb",
-    "colmap": "ImageToStl.com_banana.glb"
+  "lychee": {
+    "video": "00300000_0_1_lychee.mp4",
+    "model_neus": "lychee_womask.glb",
+    "model_nerf": "lychee_nerf.glb",
+    "model_wmask": "lychee_neus.glb"
   },
-  "game_box": {
-    "video": "static/videos/game_box.mp4",
-    "model": "ImageToStl.com_00300000__penbag.glb",
-    "model_naive": "static/models/iho/NeuS_Naive_iho_gamebox_2048.glb",
-    "model_int": "static/models/iho/NeuS_iho_gamebox_2048.glb",
-    "laser": "static/models/iho/game_box_laser.glb",
-    "colmap": "static/models/iho/colmap_poisson_gamebox_rot.glb"
+  "banana": {
+    "video": "00300000_0_1_banana.mp4",
+    "model_neus": "banana_neus_womask.glb",
+    "model_wmask": "banana_wmask.glb"
   },
-  "ghost_bear": {
-    "video": "static/videos/ghost_bear.mp4",
-    "model": "2023112385222847315.glb",
-    "model_naive": "static/models/iho/NeuS_Naive_iho_ghostbear_2048.glb",
-    "model_int": "static/models/iho/NeuS_iho_ghostbear_2048.glb",
-    "laser": "static/models/iho/ghostbear_laser.glb",
-    "colmap": "static/models/iho/colmap_poisson_ghostbear_rot.glb"
+  "penbag": {
+    "video": "00300000_0_1_penbag.mp4",
+    "model_neus": "penbag_neus.glb",
+    "model_nerf": "penbag_nerf.glb"
   },
-  "pink_peach": {
-    "video": "static/videos/pink_peach.mp4",
-    "model": "static/models/iho/NeuS_Color_iho_pinkpeach_2048.glb",
-    "model_naive": "static/models/iho/NeuS_Naive_iho_pinkpeach_1024.glb",
-    "model_int": "static/models/iho/NeuS_iho_pinkpeach_2048.glb",
-    "laser": "static/models/iho/pink_peach_laser.glb",
-    "colmap": "static/models/iho/colmap_pinkpeach_poisson_rot.glb"
+  "tool": {
+    "video": "00300000_0_1_tool.mp4",
+    "model_neus": "tool_neus.glb",
   }
 }
 
