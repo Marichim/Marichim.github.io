@@ -57,28 +57,15 @@ function toggleSubButtons(buttonId) {
   selectedButton.style.display = 'block';
 }
 
-function modelChange_video(button) {
-  var show_video = document.getElementById('show_video');
-  var show_image = document.getElementById('show_image');
-  show_video.style.display = 'block';
-  show_image.style.display = 'none';
-
+function handleClick_image(button) {
   var buttonId = button.id;
-  v1 = document.getElementById("video")
-  m1 = document.getElementById("model_neus")
-  
-  v1.setAttribute('src', iho_object[buttonId]['video']);
-  m1.setAttribute('src', iho_object[buttonId]['model_neus']);
+  modelChange_image(buttonId)
 }
 
 function modelChange_image(button) {
-  var show_video = document.getElementById('show_video');
-  var show_image = document.getElementById('show_image');
-  show_image.style.display = 'block';
-
-  var buttonId = button.id;
   v1 = document.getElementById("image")
   m1 = document.getElementById("model_neus")
+  
   v1.setAttribute('src', iho_object[buttonId]['image']);
   m1.setAttribute('src', iho_object[buttonId]['model_neus']);
 }
