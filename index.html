@@ -96,31 +96,27 @@
         <div class="columns has-text-centered bt-iho_object">
           <div class='title is-3'>Results</div>
           <div class="column has-text-centered object-btns">
-            <span id="lychee" class="button is-info is-rounded" onclick="modelChange_video(this)">
+            <span id="lychee" class="button is-info is-rounded" onclick="modelChange_image(this)">
               Lychee
             </span>
-            <span id="banana" class="button is-normal is-rounded" onclick="modelChange_video(this)">
+            <span id="banana" class="button is-normal is-rounded" onclick="modelChange_image(this)">
               Banana
             </span>
-            <span id="penbag" class="button is-info is-rounded" onclick="modelChange_video(this)">
+            <span id="penbag" class="button is-info is-rounded" onclick="modelChange_image(this)">
               Penbag
             </span>
-            <span id="tool" class="button is-normal is-rounded" onclick="modelChange_video(this)">
+            <span id="tool" class="button is-normal is-rounded" onclick="modelChange_image(this)">
               Tool
             </span>
           </div>
         </div>
       
-        <div class="container is-max-desktop">
-          <div class='columns is-vcentered'>
-            <div class="column is-centered has-text-centered" id="show_video" style="display: block;">
-              <span style="text-align:center;">
-                <video style="text-align:center; max-height: 400px;" id="video" autoplay muted loop playsinline controls
-                  height="100%">
-                  <source src="00300000_0_1_lychee.mp4" type="video/mp4">
-                </video>
+        <div class="column is-centered has-text-centered" id="show_image" style="display: none;">
+              <span style=" text-align:center;">
+                <img src="00300000_0_1_lychee.gif" alt="image" id="gif" width="100%"
+                  style="text-align:center;">
               </span>
-            </div>
+          </div>
             
             <div class="column is-centered has-text-centered">
               <span class="has-text-centered">
@@ -133,9 +129,7 @@
           </div>
         </div>
       
-        <video width="320" height="240" controls>
-    <source src="00300000_0_1_lychee.mp4" type="video/mp4">
-        </video>
+       <img src="00300000_0_1_lychee.gif" alt="this slowpoke moves"  width="250" />
       
         <div>Note: It may be slow to load models.</div>
 
