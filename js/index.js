@@ -213,9 +213,9 @@ function modelChange_video(button) {
 
   var buttonId = button.id;
   v1 = document.getElementById("video")
-  m1 = document.getElementById("model")
+  m1 = document.getElementById("model_neus")
   v1.setAttribute('src', iho_object[buttonId]['video']);
-  m1.setAttribute('src', iho_object[buttonId]['model']);
+  m1.setAttribute('src', iho_object[buttonId]['model_neus']);
 }
 
 function modelChange_image(button) {
@@ -226,9 +226,9 @@ function modelChange_image(button) {
 
   var buttonId = button.id;
   v1 = document.getElementById("image")
-  m1 = document.getElementById("model")
+  m1 = document.getElementById("model_neus")
   v1.setAttribute('src', public_object[buttonId]['image']);
-  m1.setAttribute('src', public_object[buttonId]['model']);
+  m1.setAttribute('src', public_object[buttonId]['model_neus']);
 }
 
 
@@ -239,16 +239,11 @@ function handleClick_iho(button) {
 
 function update_buttons_iho(buttonId) {
 
-  m1 = document.getElementById("laser")
-  m2 = document.getElementById("colmap")
-  m3 = document.getElementById("model_naive")
-  m4 = document.getElementById("model_int")
-  m5 = document.getElementById("model_ours")
+  m1 = document.getElementById("model_neus")
+  m2 = document.getElementById("model_nerf")
+  m3 = document.getElementById("model_womask")
 
-
-  m1.setAttribute('src', iho_object[buttonId]['laser']);
-  m2.setAttribute('src', iho_object[buttonId]['colmap']);
-  m3.setAttribute('src', iho_object[buttonId]['model_naive']);
-  m4.setAttribute('src', iho_object[buttonId]['model_int']);
-  m5.setAttribute('src', iho_object[buttonId]['model']);
+  m1.setAttribute('src', iho_object[buttonId]['model_neus']);
+  m2.setAttribute('src', iho_object[buttonId]['model_nerf']);
+  m3.setAttribute('src', iho_object[buttonId]['model_womask']);
 }
