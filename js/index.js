@@ -62,7 +62,7 @@ function handleClick_image(button) {
   modelChange_image(buttonId)
 }
 
-function modelChange_image(button) {
+function modelChange_image(buttonId) {
   v1 = document.getElementById("image")
   m1 = document.getElementById("model_neus")
   
