@@ -9,6 +9,7 @@ var iho_object = {
     "video": "00300000_0_1_lychee.mp4",
     "model_neus": "lychee_neus.glb",
     "model_neus2": "lychee_neus.glb",
+    "model_neus3": "lychee_neus.glb",
     "model_nerf": "lychee_nerf.glb",
     "model_womask": "lychee_womask.glb"
   },
@@ -16,7 +17,9 @@ var iho_object = {
     "image": "00300000_0_32_banana_wmask.png",
     "video": "00300000_0_1_banana.mp4",
     "model_neus": "banana_wmask.glb",
+    "model_neus2": "banana_wmask.glb",
     "model_neus3": "banana_wmask.glb",
+    "model_nerf": "lychee_nerf.glb",
     "model_womask": "banana_neus_womask.glb"
   },
   "penbag": {
@@ -24,12 +27,18 @@ var iho_object = {
     "video": "00300000_0_1_penbag.mp4",
     "model_neus": "penbag_neus.glb",
     "model_neus2": "penbag_neus.glb",
+    "model_neus3": "penbag_neus.glb",
     "model_nerf": "penbag_nerf.glb"
+    "model_womask": "banana_neus_womask.glb"
   },
   "tool": {
     "image": "00300000_0_8_tool.png",
     "video": "00300000_0_1_tool.mp4",
     "model_neus": "tool_neus.glb",
+    "model_neus2": "tool_neus.glb",
+    "model_neus3": "tool_neus.glb",
+    "model_nerf": "penbag_nerf.glb"
+    "model_womask": "banana_neus_womask.glb"
   }
 }
 
