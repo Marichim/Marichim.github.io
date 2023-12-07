@@ -51,57 +51,6 @@
             <h1 class="title is-1 publication-title">3D Reconstruction of Campus Objects
             </h1>
             <!-- <br> -->
-              <div class="publication-links">
-                <!-- PDF Link. -->
-                <!-- <span class="link-block">
-                  <a href="https://colmar-zlicheng.github.io/color_neus"
-                    class="external-link button is-normal is-rounded is-info">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span> -->
-                <!-- Arxiv Link. -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2308.06962" class="external-link button is-normal is-rounded is-info">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>Arxiv</span>
-                  </a>
-                </span>
-                <!-- Video Link. -->
-                <!-- <span class="link-block">
-                  <a href="https://colmar-zlicheng.github.io/color_neus"
-                    class="external-link button is-normal is-rounded is-info">
-                    <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                    </span>
-                    <span>Video</span>
-                  </a>
-                </span> -->
-                <!-- Code Link. -->
-                <span class="link-block">
-                  <a href="https://github.com/Colmar-zlicheng/Color-NeuS"
-                    class="external-link button is-normal is-rounded is-info">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <!-- Data Link. -->
-                <span class="link-block">
-                  <a href="https://drive.google.com/drive/folders/1C6vcRiy_MFMtsaR8AydRAPrLIkok-tJm?usp=sharing"
-                    class="external-link button is-normal is-rounded is-info">
-                    <span class="icon">
-                      <i class="far fa-images"></i>
-                    </span>
-                    <span>Data</span>
-                  </a>
-                </span>
-              </div>
 
             </div>
           </div>
@@ -143,6 +92,23 @@
           </div>
         </div>
         <!--/ Method. -->
+
+        <div class="columns has-text-centered bt-iho_object">
+          <div class="column has-text-centered object-btns">
+            <span id="lychee" class="button is-info is-rounded" onclick="handleClick_iho(this)">
+              Lychee
+            </span>
+            <span id="banana" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
+              Banana
+            </span>
+            <span id="penbag" class="button is-info is-rounded" onclick="handleClick_iho(this)">
+              Penbag
+            </span>
+            <span id="tool" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
+              Tool
+            </span>
+          </div>
+        </div>
       
         <div class="container is-max-desktop">
           <div class='columns is-vcentered'>
@@ -150,20 +116,20 @@
               <span style="text-align:center;">
                 <video style="text-align:center; max-height: 400px;" id="video" autoplay muted loop playsinline controls
                   height="100%">
-                  <source src="00300000_0_1_tool.mp4" type="video/mp4">
+                  <source src="00300000_0_1_lychee.mp4" type="video/mp4">
                 </video>
               </span>
             </div>
             <div class="column is-centered has-text-centered" id="show_image" style="display: none;">
               <span style=" text-align:center;">
-                <img src="00300000_0_8_tool.png" alt="image" id="image" width="100%"
+                <img src="00300000_0_10_lychee.png" alt="image" id="image" width="100%"
                   style="text-align:center;">
               </span>
             </div>
             <div class="column is-centered has-text-centered">
               <span class="has-text-centered">
-                <model-viewer style="max-height: 400px;" id='model' alt="model"
-                  src="tool_neus.glb" shadow-intensity="0" ar auto-rotate
+                <model-viewer style="max-height: 400px;" id='model_neus' alt="model"
+                  src="lychee_neus.glb" shadow-intensity="0" ar auto-rotate
                   rotation-per-second="40deg" camera-controls touch-action="pan-y">
                 </model-viewer>
               </span>
@@ -190,10 +156,10 @@
         <!-- interaction -->
         <div class="columns has-text-centered bt-iho_object">
           <div class="column has-text-centered object-btns">
-            <span id="ghost_bear" class="button is-info is-rounded" onclick="handleClick_iho(this)">
+            <span id="lychee" class="button is-info is-rounded" onclick="handleClick_iho(this)">
               Lychee
             </span>
-            <span id="game_box" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
+            <span id="penbag" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
               Penbag
             </span>
           </div>
@@ -202,18 +168,18 @@
       
         <div class='columns is-vcentered'>
           <div class="column is-centered has-text-centered">
-            <div class='title is-5'>Naive solution</div>
+            <div class='title is-5'>NeRF</div>
             <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='model_naive' alt="model" class="model_square"
+              <model-viewer style="max-height: 400px;" id='model_nerf' alt="model" class="model_square"
                 src="lychee_nerf.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
           </div>
           <div class="column is-centered has-text-centered">
-            <div class='title is-5'>Our solution</div>
+            <div class='title is-5'>NeuS</div>
             <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='model_ours' alt="model" class="model_square"
+              <model-viewer style="max-height: 400px;" id='model_neus' alt="model" class="model_square"
                 src="lychee_neus.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
@@ -230,10 +196,10 @@
         </div>
       <div class="columns has-text-centered bt-iho_object">
           <div class="column has-text-centered object-btns">
-            <span id="ghost_bear" class="button is-info is-rounded" onclick="handleClick_iho(this)">
+            <span id="lychee" class="button is-info is-rounded" onclick="handleClick_iho(this)">
               Lychee
             </span>
-            <span id="pink_peach" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
+            <span id="banana" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
               Banana
             </span>
           </div>
@@ -243,8 +209,8 @@
           <div class="column is-centered has-text-centered">
             <div class='title is-5'>With Mask</div>
             <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='model_naive' alt="model" class="model_square"
-                src="lychee_womask.glb" shadow-intensity="0" ar auto-rotate
+              <model-viewer style="max-height: 400px;" id='model_neus' alt="model" class="model_square"
+                src="lychee_neus.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
@@ -252,8 +218,8 @@
           <div class="column is-centered has-text-centered">
             <div class='title is-5'>Without Mask</div>
             <span class="has-text-centered">
-              <model-viewer style="max-height: 400px;" id='model_ours' alt="model" class="model_square"
-                src="lychee_neus.glb" shadow-intensity="0" ar auto-rotate
+              <model-viewer style="max-height: 400px;" id='model_womask' alt="model" class="model_square"
+                src="lychee_womask.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
