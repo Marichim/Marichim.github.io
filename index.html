@@ -112,17 +112,15 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                The reconstruction of object surfaces from multi-view images or monocular video is a fundamental issue
-                in computer vision. However, much of the recent research concentrates on reconstructing geometry through
-                implicit or explicit methods. In this paper, we shift our focus towards reconstructing mesh in
-                conjunction with color. We remove the view-dependent color from neural volume rendering while retaining
-                volume rendering performance through a relighting network. Mesh is extracted from the signed distance
-                function (SDF) network for the surface, and color for each surface vertex is drawn from the global color
-                network. To evaluate our approach, we conceived a in hand object scanning task featuring numerous
-                occlusions and dramatic shifts in lighting conditions. We've gathered several videos for this task, and
-                the results surpass those of any existing methods capable of reconstructing mesh alongside color.
-                Additionally, our method's performance was assessed using public datasets, including DTU, BlendedMVS,
-                and OmniObject3D. The results indicated that our method performs well across all these datasets.
+                A novel approach to reconstructing the surfaces of three-dimensional objects based on two-dimensional images captured from a variety of angles was developed
+                by NeuS. Based on NeuS, we made some improvements to improve the quality of the reconstruction. Firstly, in terms of the production of masks, we directly apply
+                this artificial intelligence tool called remove.bg based on U^2-Net when we are mating images; in addition, it performs with a high degree of precision when 
+                identifying the objects that are the focus of our attention. By utilizing this tool, we are able to cut down on the amount of time that we spend on the production
+                of masks, which in turn allows us to increase our overall efficiency. Secondly, we derived a method that is similar to hierarchical sampling. But we only 
+                apply a coarse network to improve NeuS, which accomplishes a goal that is comparable to that of importance sampling; however, compared to viewing every sample
+                as an self-reliant probabilistic estimate of the entire integral, we use the sampled values as a nonuniform discretization of the entire integration domain.
+                Therefore, the improved method performs significantly better than the output of the reconstruction when it comes to the reconstruction of objects that have
+                intricate structures and textures.
               </p>
             </div>
           </div>
@@ -139,164 +137,16 @@
                 <img src="static/image/pipeline_web.png" alt="image">
               <p>
               <p>
-                Color-NeuS employs a Signed Distance Function (SDF) network to grasp the implicit geometry. Following
-                that, it utilizes a global color network to learn view-independent color characteristics. Additionally,
-                a relight network is deployed to adjust for variations that correlate with the viewing direction. During
-                the inference stage, only the global view-independent color is used, ensuring a consistent visual
-                representation regardless of perspective.
+                Similar to NeRF, NeuS start by receiving a set of photos of a 3D object taken from different views. Then, it applies the signed distance function (SDF)
+                to represent the object surface and uses a novel volume rendering approach to render the images by learning the neural SDF representation. Compared to
+                the original volume rendering approach, this newly-developed scheme improves the accuracy of rendering outcomes. At the same time, it guarantees a high
+                quality of surface reconstruction no matter how complex the object structure is. 
               <p>
             </div>
           </div>
         </div>
         <!--/ Method. -->
-<!--
-        <div class='title is-3'>Interactive Results</div>
-        <div class='title is-4 has-text-centered'>Dataset</div>
-        <div class="columns has-text-centered bt-dataset">
-          <div class="column has-text-centered dataset-btns">
-            <span id="iho" class="button is-info is-rounded" onclick="handleClick(this)">
-              IHO Video
-            </span>
-            <span id="omni" class="button is-normal is-rounded" onclick="handleClick(this)">
-              OmniObject3D
-            </span>
-            <span id="dtu" class="button is-normal is-rounded" onclick="handleClick(this)">
-              DTU
-            </span>
-            <span id="blendedmvs" class="button is-normal is-rounded" onclick="handleClick(this)">
-              BlendedMVS
-            </span>
-          </div>
-        </div>
-
-        <div class="columns has-text-centered bt-iho_object">
-          <div class="column has-text-centered object-btns sub-button" id="sub-button-iho">
-            <span id="ghost_bear" class="button is-info is-rounded" onclick="modelChange_video(this)">
-              ghost bear
-            </span>
-            <span id="pink_peach" class="button is-normal is-rounded " onclick="modelChange_video(this)">
-              pink peach
-            </span>
-            <span id="game_box" class="button is-normal is-rounded " onclick="modelChange_video(this)">
-              game box
-            </span>
-            <span id="drink" class="button is-normal is-rounded " onclick="modelChange_video(this)">
-              drink
-            </span>
-          </div>
-          <div class="column has-text-centered object-btns sub-button" id="sub-button-omni">
-            <span id="doll_002" class="button is-info is-rounded" onclick="modelChange_image(this)">
-              doll 002
-            </span>
-            <span id="doll_008" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              doll 008
-            </span>
-            <span id="doll_037" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              doll 037
-            </span>
-            <span id="doll_049" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              doll 049
-            </span>
-            <span id="doll_062" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              doll 062
-            </span>
-            <span id="doll_074" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              doll 074
-            </span>
-            <span id="doll_085" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              doll 085
-            </span>
-            <span id="toy_animals_001" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              toy_animals 001
-            </span>
-            <span id="toy_animals_005" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              toy_animals 005
-            </span>
-            <span id="toy_animals_016" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              toy_animals 016
-            </span>
-            <span id="toy_animals_019" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              toy_animals 019
-            </span>
-            <span id="toy_animals_059" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              toy_animals 059
-            </span>
-          </div>
-          <div class="column has-text-centered object-btns sub-button" id="sub-button-dtu">
-            <span id="dtu_24" class="button is-info is-rounded" onclick="modelChange_image(this)">
-              dtu 24
-            </span>
-            <span id="dtu_37" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 37
-            </span>
-            <span id="dtu_40" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 40
-            </span>
-            <span id="dtu_55" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 55
-            </span>
-            <span id="dtu_63" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 63
-            </span>
-            <span id="dtu_65" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 65
-            </span>
-            <span id="dtu_69" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 69
-            </span>
-            <span id="dtu_83" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 83
-            </span>
-            <span id="dtu_97" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 97
-            </span>
-            <span id="dtu_105" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 105
-            </span>
-            <span id="dtu_106" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 106
-            </span>
-            <span id="dtu_110" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 110
-            </span>
-            <span id="dtu_114" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 114
-            </span>
-            <span id="dtu_118" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 118
-            </span>
-            <span id="dtu_122" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dtu 122
-            </span>
-          </div>
-          <div class="column has-text-centered object-btns sub-button" id="sub-button-blendedmvs">
-            <span id="bmvs_bear" class="button is-info is-rounded" onclick="modelChange_image(this)">
-              bear
-            </span>
-            <span id="bmvs_clock" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              clock
-            </span>
-            <span id="bmvs_dog" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              dog
-            </span>
-            <span id="bmvs_durian" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              durian
-            </span>
-            <span id="bmvs_jade" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              jade
-            </span>
-            <span id="bmvs_man" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              man
-            </span>
-            <span id="bmvs_sculpture" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              sculpture
-            </span>
-            <span id="bmvs_stone" class="button is-normal is-rounded " onclick="modelChange_image(this)">
-              stone
-            </span>
-          </div>
-        </div>
-      -->
+      
         <div class="container is-max-desktop">
           <div class='columns is-vcentered'>
             <div class="column is-centered has-text-centered" id="show_video" style="display: block;">
@@ -360,7 +210,7 @@
         </div>
 
         <div class='columns is-vcentered'>
-          <div class="column is-centered has-text-centered">
+         <!-- <div class="column is-centered has-text-centered">
             <div class='title is-5'>Structure light</div>
             <span class="has-text-centered">
               <model-viewer style="max-height: 400px;" id='laser' alt="model" class="model_square"
@@ -387,7 +237,7 @@
               </model-viewer>
             </span>
           </div>
-        </div>
+        </div> -->
         <div class='columns is-vcentered'>
           <div class="column is-centered has-text-centered">
             <div class='title is-5'>Naive solution</div>
