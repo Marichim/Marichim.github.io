@@ -134,9 +134,6 @@
             <h2 class="title is-3">Method</h2>
             <div class="content has-text-justified">
               <p>
-                <img src="static/image/pipeline_web.png" alt="image">
-              <p>
-              <p>
                 Similar to NeRF, NeuS start by receiving a set of photos of a 3D object taken from different views. Then, it applies the signed distance function (SDF)
                 to represent the object surface and uses a novel volume rendering approach to render the images by learning the neural SDF representation. Compared to
                 the original volume rendering approach, this newly-developed scheme improves the accuracy of rendering outcomes. At the same time, it guarantees a high
@@ -153,20 +150,20 @@
               <span style="text-align:center;">
                 <video style="text-align:center; max-height: 400px;" id="video" autoplay muted loop playsinline controls
                   height="100%">
-                  <source src="static/videos/ghost_bear.mp4" type="video/mp4">
+                  <source src="00300000_0_1_tool.mp4" type="video/mp4">
                 </video>
               </span>
             </div>
             <div class="column is-centered has-text-centered" id="show_image" style="display: none;">
               <span style=" text-align:center;">
-                <img src="static/image/omniobject3d/doll_002.png" alt="image" id="image" width="100%"
+                <img src="00300000_0_8_tool.png" alt="image" id="image" width="100%"
                   style="text-align:center;">
               </span>
             </div>
             <div class="column is-centered has-text-centered">
               <span class="has-text-centered">
                 <model-viewer style="max-height: 400px;" id='model' alt="model"
-                  src="2023112385222847315.glb" shadow-intensity="0" ar auto-rotate
+                  src="tool_neus.glb" shadow-intensity="0" ar auto-rotate
                   rotation-per-second="40deg" camera-controls touch-action="pan-y">
                 </model-viewer>
               </span>
@@ -184,7 +181,7 @@
           <div class="column is-four-fifths">
             <div class="content has-text-justified">
               <p>
-                <img src="static/image/exp_iho.png" alt="image">
+                <img src="图片3.jpg" alt="image">
               <p>
             </div>
           </div>
@@ -196,14 +193,8 @@
             <span id="ghost_bear" class="button is-info is-rounded" onclick="handleClick_iho(this)">
               Lychee
             </span>
-            <span id="pink_peach" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
-              Banana
-            </span>
             <span id="game_box" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
               Penbag
-            </span>
-            <span id="drink" class="button is-normal is-rounded" onclick="handleClick_iho(this)">
-              Tool
             </span>
           </div>
         </div>
@@ -214,7 +205,7 @@
             <div class='title is-5'>Naive solution</div>
             <span class="has-text-centered">
               <model-viewer style="max-height: 400px;" id='model_naive' alt="model" class="model_square"
-                src="ImageToStl.com_banana.glb" shadow-intensity="0" ar auto-rotate
+                src="lychee_nerf.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
@@ -223,7 +214,7 @@
             <div class='title is-5'>Our solution</div>
             <span class="has-text-centered">
               <model-viewer style="max-height: 400px;" id='model_ours' alt="model" class="model_square"
-                src="2023112385222847315.glb" shadow-intensity="0" ar auto-rotate
+                src="lychee_neus.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
@@ -253,7 +244,7 @@
             <div class='title is-5'>With Mask</div>
             <span class="has-text-centered">
               <model-viewer style="max-height: 400px;" id='model_naive' alt="model" class="model_square"
-                src="ImageToStl.com_banana.glb" shadow-intensity="0" ar auto-rotate
+                src="lychee_womask.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
@@ -262,7 +253,7 @@
             <div class='title is-5'>Without Mask</div>
             <span class="has-text-centered">
               <model-viewer style="max-height: 400px;" id='model_ours' alt="model" class="model_square"
-                src="2023112385222847315.glb" shadow-intensity="0" ar auto-rotate
+                src="lychee_neus.glb" shadow-intensity="0" ar auto-rotate
                 rotation-per-second="40deg" camera-controls touch-action="pan-y">
               </model-viewer>
             </span>
