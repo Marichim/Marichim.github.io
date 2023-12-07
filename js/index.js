@@ -61,6 +61,7 @@ function modelChange_video(button) {
   var show_video = document.getElementById('show_video');
   var show_image = document.getElementById('show_image');
   show_video.style.display = 'block';
+  show_image.style.display = 'none';
 
   var buttonId = button.id;
   v1 = document.getElementById("video")
@@ -81,22 +82,6 @@ function modelChange_image(button) {
   m1.setAttribute('src', iho_object[buttonId]['model_neus']);
 }
 
-
-function handleClick_iho1(button) {
-  var buttonId = button.id;
-  update_buttons_iho1(buttonId)
-  modelChange_image(buttonId)
-  modelChange_video(buttonId)
-}
-
-function update_buttons_iho1(buttonId) {
-
-  m1 = document.getElementById("model_neus")
-  v1 = document.getElementById("video")
-  
-  m1.setAttribute('src', iho_object[buttonId]['model_neus']);
-  v1.setAttribute('src', iho_object[buttonId]['video']);
-}
 
 function handleClick_iho2(button) {
   var buttonId = button.id;
