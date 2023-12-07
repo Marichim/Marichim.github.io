@@ -28,7 +28,7 @@ var iho_object = {
     "model_neus": "penbag_neus.glb",
     "model_neus2": "penbag_neus.glb",
     "model_neus3": "penbag_neus.glb",
-    "model_nerf": "penbag_nerf.glb"
+    "model_nerf": "penbag_nerf.glb",
     "model_womask": "banana_neus_womask.glb"
   },
   "tool": {
@@ -37,7 +37,7 @@ var iho_object = {
     "model_neus": "tool_neus.glb",
     "model_neus2": "tool_neus.glb",
     "model_neus3": "tool_neus.glb",
-    "model_nerf": "penbag_nerf.glb"
+    "model_nerf": "penbag_nerf.glb",
     "model_womask": "banana_neus_womask.glb"
   }
 }
@@ -96,10 +96,12 @@ function update_buttons_iho(buttonId) {
   m3 = document.getElementById("model_womask")
   m4 = document.getElementById("model_neus2")
   m5 = document.getElementById("model_neus3")
-
+  v1 = document.getElementById("video")
+  
   m1.setAttribute('src', iho_object[buttonId]['model_neus']);
   m2.setAttribute('src', iho_object[buttonId]['model_nerf']);
   m3.setAttribute('src', iho_object[buttonId]['model_womask']);
   m4.setAttribute('src', iho_object[buttonId]['model_neus2']);
   m5.setAttribute('src', iho_object[buttonId]['model_neus3']);
+  v1.setAttribute('src', iho_object[buttonId]['video']);
 }
