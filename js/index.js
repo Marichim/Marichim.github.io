@@ -8,6 +8,7 @@ var iho_object = {
     "image": "00300000_0_10_lychee.png",
     "video": "00300000_0_1_lychee.mp4",
     "model_neus": "lychee_neus.glb",
+    "model_neus2": "lychee_neus.glb",
     "model_nerf": "lychee_nerf.glb",
     "model_womask": "lychee_womask.glb"
   },
@@ -15,12 +16,14 @@ var iho_object = {
     "image": "00300000_0_32_banana_wmask.png",
     "video": "00300000_0_1_banana.mp4",
     "model_neus": "banana_wmask.glb",
+    "model_neus2": "banana_wmask.glb",
     "model_womask": "banana_neus_womask.glb"
   },
   "penbag": {
     "image": "00300000_0_3_penbag.png",
     "video": "00300000_0_1_penbag.mp4",
     "model_neus": "penbag_neus.glb",
+    "model_neus2": "penbag_neus.glb",
     "model_nerf": "penbag_nerf.glb"
   },
   "tool": {
@@ -73,6 +76,8 @@ function modelChange_image(button) {
 function handleClick_iho(button) {
   var buttonId = button.id;
   update_buttons_iho(buttonId)
+  modelChange_image(buttonId)
+  modelChange_video(buttonId)
 }
 
 function update_buttons_iho(buttonId) {
@@ -80,8 +85,10 @@ function update_buttons_iho(buttonId) {
   m1 = document.getElementById("model_neus")
   m2 = document.getElementById("model_nerf")
   m3 = document.getElementById("model_womask")
+  m4 = document.getElementById("model_neus2")
 
   m1.setAttribute('src', iho_object[buttonId]['model_neus']);
   m2.setAttribute('src', iho_object[buttonId]['model_nerf']);
   m3.setAttribute('src', iho_object[buttonId]['model_womask']);
+  m4.setAttribute('src', iho_object[buttonId]['model_neus2']);
 }
