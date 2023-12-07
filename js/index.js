@@ -23,22 +23,26 @@ var data_test = {
 
 var iho_object = {
   "lychee": {
+    "image": "00300000_0_10_lychee.jpg",
     "video": "00300000_0_1_lychee.mp4",
-    "model_neus": "lychee_womask.glb",
+    "model_neus": "lychee_neus.glb",
     "model_nerf": "lychee_nerf.glb",
-    "model_wmask": "lychee_neus.glb"
+    "model_womask": "lychee_womask.glb"
   },
   "banana": {
+    "image": "00300000_0_32_banana_wmask.jpg",
     "video": "00300000_0_1_banana.mp4",
-    "model_neus": "banana_neus_womask.glb",
-    "model_wmask": "banana_wmask.glb"
+    "model_neus": "banana_wmask.glb",
+    "model_womask": "banana_neus_womask.glb"
   },
   "penbag": {
+    "image": "00300000_0_3_penbag.jpg",
     "video": "00300000_0_1_penbag.mp4",
     "model_neus": "penbag_neus.glb",
     "model_nerf": "penbag_nerf.glb"
   },
   "tool": {
+    "image": "00300000_0_8_tool.jpg",
     "video": "00300000_0_1_tool.mp4",
     "model_neus": "tool_neus.glb",
   }
